@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0873BD6E9CB770C92E70D2EF /* Pods_LPCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EAD937B5A11985C869B5955 /* Pods_LPCTest.framework */; };
 		20CAE9C11F3B2532006CB70F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20CAE9C01F3B2532006CB70F /* Localizable.strings */; };
 		B0AB62631F38688A00CBFBF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB62621F38688A00CBFBF6 /* AppDelegate.swift */; };
 		B0AB62651F38688A00CBFBF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB62641F38688A00CBFBF6 /* ViewController.swift */; };
@@ -21,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		20CAE9C01F3B2532006CB70F /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		4EAD937B5A11985C869B5955 /* Pods_LPCTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LPCTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DFE0DEFA8056DF7FD2E2D53 /* Pods-LPCTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPCTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LPCTest/Pods-LPCTest.debug.xcconfig"; sourceTree = "<group>"; };
 		B0AB625F1F38688A00CBFBF6 /* LPCTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPCTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0AB62621F38688A00CBFBF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0AB62641F38688A00CBFBF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		B0AB627D1F3873E500CBFBF6 /* PotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotCell.swift; sourceTree = "<group>"; };
 		B0AB62801F389B5600CBFBF6 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		B0AB62821F38B02200CBFBF6 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		FCEC8AB57FF998C70C126F34 /* Pods-LPCTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPCTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-LPCTest/Pods-LPCTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,12 +43,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0873BD6E9CB770C92E70D2EF /* Pods_LPCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D3F631083E88169820C2C54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4EAD937B5A11985C869B5955 /* Pods_LPCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		20CAE9B61F3B221E006CB70F /* Code */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,11 +142,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A055711EDBC74A37049302D8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8DFE0DEFA8056DF7FD2E2D53 /* Pods-LPCTest.debug.xcconfig */,
+				FCEC8AB57FF998C70C126F34 /* Pods-LPCTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B0AB62561F38688A00CBFBF6 = {
 			isa = PBXGroup;
 			children = (
 				B0AB62611F38688A00CBFBF6 /* LPCTest */,
 				B0AB62601F38688A00CBFBF6 /* Products */,
+				A055711EDBC74A37049302D8 /* Pods */,
+				0D3F631083E88169820C2C54 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,9 +190,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0AB62711F38688A00CBFBF6 /* Build configuration list for PBXNativeTarget "LPCTest" */;
 			buildPhases = (
+				B17B08A335E1B22FBA864244 /* [CP] Check Pods Manifest.lock */,
 				B0AB625B1F38688A00CBFBF6 /* Sources */,
 				B0AB625C1F38688A00CBFBF6 /* Frameworks */,
 				B0AB625D1F38688A00CBFBF6 /* Resources */,
+				EA37C905CA8275E9F1585926 /* [CP] Embed Pods Frameworks */,
+				989D9813B0C95743075C1CFC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -225,6 +252,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		989D9813B0C95743075C1CFC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LPCTest/Pods-LPCTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B17B08A335E1B22FBA864244 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EA37C905CA8275E9F1585926 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LPCTest/Pods-LPCTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B0AB625B1F38688A00CBFBF6 /* Sources */ = {
@@ -357,6 +432,7 @@
 		};
 		B0AB62721F38688A00CBFBF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DFE0DEFA8056DF7FD2E2D53 /* Pods-LPCTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LPCTest/Info.plist;
@@ -369,6 +445,7 @@
 		};
 		B0AB62731F38688A00CBFBF6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCEC8AB57FF998C70C126F34 /* Pods-LPCTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LPCTest/Info.plist;
