@@ -25,6 +25,8 @@ final class HomeViewController: ViewController {
         // Set View controller title
         self.title = L10n.appName.string
         
+        self.tableView.register(cellType: PotCell.self)
+        
         self.attachPullToRefresh()
         
         
@@ -96,6 +98,8 @@ final class HomeViewController: ViewController {
 
 }
 
+// MARK : - UITableViewDelegate
+
 extension HomeViewController: UITableViewDelegate {
 
 
@@ -103,13 +107,13 @@ extension HomeViewController: UITableViewDelegate {
 
 }
 
+// MARK : - UITableViewDataSource
+
 extension HomeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //TODO
-        
-        return 0
+        return pots.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

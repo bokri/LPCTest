@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Reusable
 
-class PotCell : UITableViewCell {
+class PotCell : UITableViewCell, NibReusable {
     
     @IBOutlet internal weak var titleLabel: UILabel!
     @IBOutlet internal weak var typeImageView: UIImageView!
