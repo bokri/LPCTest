@@ -1,4 +1,5 @@
 PODS:
+  - Kingfisher (3.10.3)
   - Reusable (4.0.0):
     - Reusable/Storyboard (= 4.0.0)
     - Reusable/View (= 4.0.0)
@@ -7,13 +8,15 @@ PODS:
   - SwiftGen (3.0.1)
 
 DEPENDENCIES:
+  - Kingfisher (~> 3.10.3)
   - Reusable (~> 4.0.0)
   - SwiftGen (~> 3.0.1)
 
 SPEC CHECKSUMS:
+  Kingfisher: a0ac82dc5bcf0388dd74b294cf2cc13730c63436
   Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
   SwiftGen: 5f69367fae99c11d52d1ab9d45dcf10a3e59b8ef
 
-PODFILE CHECKSUM: 59f028a49e28aac69287fce10da453cd1498fbf0
+PODFILE CHECKSUM: 276a01a604d73f5255f59744fbb175a7a93f7138
 
 COCOAPODS: 1.2.1

@@ -8,5 +8,6 @@ target 'LPCTest' do
   # Pods for LPCTest
   pod 'SwiftGen', '~> 3.0.1'
   pod 'Reusable', '~> 4.0.0'
+  pod 'Kingfisher', '~> 3.10.3'
 
 end
