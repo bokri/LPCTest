@@ -16,6 +16,7 @@
 		20CAE9D61F3B37DB006CB70F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAE9D51F3B37DB006CB70F /* HomeViewController.swift */; };
 		20CAE9D91F3B41D3006CB70F /* PotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAE9D71F3B41D3006CB70F /* PotCell.swift */; };
 		20CAE9DA1F3B41D3006CB70F /* PotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20CAE9D81F3B41D3006CB70F /* PotCell.xib */; };
+		20CAE9DC1F3B507A006CB70F /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAE9DB1F3B507A006CB70F /* Images.swift */; };
 		B0AB62631F38688A00CBFBF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB62621F38688A00CBFBF6 /* AppDelegate.swift */; };
 		B0AB62651F38688A00CBFBF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB62641F38688A00CBFBF6 /* ViewController.swift */; };
 		B0AB62681F38688A00CBFBF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0AB62661F38688A00CBFBF6 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		20CAE9D51F3B37DB006CB70F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		20CAE9D71F3B41D3006CB70F /* PotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotCell.swift; sourceTree = "<group>"; };
 		20CAE9D81F3B41D3006CB70F /* PotCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PotCell.xib; sourceTree = "<group>"; };
+		20CAE9DB1F3B507A006CB70F /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		4EAD937B5A11985C869B5955 /* Pods_LPCTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LPCTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DFE0DEFA8056DF7FD2E2D53 /* Pods-LPCTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPCTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LPCTest/Pods-LPCTest.debug.xcconfig"; sourceTree = "<group>"; };
 		B0AB625F1F38688A00CBFBF6 /* LPCTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPCTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +167,7 @@
 				20CAE9C41F3B2EB3006CB70F /* Storyboards.swift */,
 				20CAE9CC1F3B3000006CB70F /* Strings.swift */,
 				20CAE9D01F3B30F1006CB70F /* Colors.swift */,
+				20CAE9DB1F3B507A006CB70F /* Images.swift */,
 			);
 			path = SwiftGen;
 			sourceTree = "<group>";
@@ -305,7 +308,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\n\nif which $PODS_ROOT/SwiftGen/bin/swiftgen >/dev/null; then\nSRCDIR=\"$PROJECT_DIR/$TARGET_NAME\"\n$PODS_ROOT/SwiftGen/bin/swiftgen storyboards \"$SRCDIR\" --output \"$SRCDIR/Code/Constants/SwiftGen/Storyboards.swift\" -t swift3\n$PODS_ROOT/SwiftGen/bin/swiftgen strings \"$SRCDIR/Resources/Localization/en.lproj/Localizable.strings\" --output \"$SRCDIR/Code/Constants/SwiftGen/Strings.swift\" -t swift3\n$PODS_ROOT/SwiftGen/bin/swiftgen colors \"$SRCDIR/Resources/Colors/colors.txt\" --output \"$SRCDIR/Code/Constants/SwiftGen/Colors.swift\" -t swift3\nelse\necho \"warning: SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\nfi\n";
+			shellScript = "#!/bin/bash\n\nif which $PODS_ROOT/SwiftGen/bin/swiftgen >/dev/null; then\nSRCDIR=\"$PROJECT_DIR/$TARGET_NAME\"\n$PODS_ROOT/SwiftGen/bin/swiftgen storyboards \"$SRCDIR\" --output \"$SRCDIR/Code/Constants/SwiftGen/Storyboards.swift\" -t swift3\n$PODS_ROOT/SwiftGen/bin/swiftgen strings \"$SRCDIR/Resources/Localization/en.lproj/Localizable.strings\" --output \"$SRCDIR/Code/Constants/SwiftGen/Strings.swift\" -t swift3\n$PODS_ROOT/SwiftGen/bin/swiftgen colors \"$SRCDIR/Resources/Colors/colors.txt\" --output \"$SRCDIR/Code/Constants/SwiftGen/Colors.swift\" -t swift3\n$PODS_ROOT/SwiftGen/bin/swiftgen images \"$SRCDIR/Assets.xcassets\" --output \"$SRCDIR/Code/Constants/SwiftGen/Images.swift\" -t swift3\nelse\necho \"warning: SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\nfi\n";
 		};
 		989D9813B0C95743075C1CFC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -362,6 +365,7 @@
 				B0AB62791F386DB200CBFBF6 /* Pot.swift in Sources */,
 				20CAE9D11F3B30F1006CB70F /* Colors.swift in Sources */,
 				B0AB62651F38688A00CBFBF6 /* ViewController.swift in Sources */,
+				20CAE9DC1F3B507A006CB70F /* Images.swift in Sources */,
 				20CAE9D91F3B41D3006CB70F /* PotCell.swift in Sources */,
 				20CAE9CD1F3B3000006CB70F /* Strings.swift in Sources */,
 				B0AB62811F389B5600CBFBF6 /* ImageLoader.swift in Sources */,
