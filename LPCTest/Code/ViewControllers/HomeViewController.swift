@@ -25,10 +25,7 @@ final class HomeViewController: ViewController {
         var title : String! //TODO
         self.navigationController?.navigationBar.topItem?.title = title
         
-        self.refreshControl.addTarget(self,
-                                       action: #selector(handleRefresh(refreshControl:
-                                        )),
-                                       for: UIControlEvents.valueChanged)
+        self.attachPullToRefresh()
         
         
         
@@ -37,6 +34,18 @@ final class HomeViewController: ViewController {
         tableView.estimatedRowHeight = 211;
         
         fetchPots()
+    }
+    
+    func attachPullToRefresh() {
+        refreshControl.addTarget(self, action: #selector(HomeViewController.pullToRefresh), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    func pullToRefresh() {
+        
+        fetchPots()
+        refreshControl.endRefreshing()
+        
     }
     
     
