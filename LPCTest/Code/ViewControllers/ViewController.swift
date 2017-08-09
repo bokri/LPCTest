@@ -1,98 +1,20 @@
 import UIKit
 
-class ViewController: UITableViewController {
-
-   static private let cellIdentifier = "PotCell"
-
-  var pots = [Pot]()
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-
-    var title : String! //TODO
-    self.navigationController?.navigationBar.topItem?.title = title
-
-    self.refreshControl?.addTarget(self,
-                                   action: #selector(handleRefresh(refreshControl:
-                                    )),
-                                   for: UIControlEvents.valueChanged)
-
-
-
-    //TODO 
-    tableView.rowHeight = UITableViewAutomaticDimension
-    tableView.estimatedRowHeight = 211;
-
-    fetchPots()
-  }
-
-
-
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-    //TODO
-
-    return 0
-  }
-
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-    var cell : PotCell!  //TODO
-
-    let pot = getPot(indexPath.row)
-
-    cell.configureCellFor(pot: pot)
-
-    return cell
-  }
-
-
-  func fetchPots(){
-
-    ApiClient.shared.pots(success: { (pots) in
-     //TODO
-    }) { 
-      //TODO
+/**
+   * This is a global view controller to set default parameters for all view controllers
+ */
+class ViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
     }
-
-  }
-
-  func getPot(_ row : Int) -> Pot{
-    return pots[row]
-  }
-
-  func handleRefresh(refreshControl: UIRefreshControl) {
-
-    ApiClient.shared.pots(success: { (pots) in
-      //TODO
-    }) {
-      //TODO
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-
-
-  }
-
-
-  @IBAction func addPot(_ sender: UIBarButtonItem) {
-
-    ApiClient.shared.createPot {
-      //TODO
-    }
-  }
-
-  @IBAction func removePot(_ sender: UIBarButtonItem) {
-
-    ApiClient.shared.removePot {
-      //TODO
-    }
-
-
-  }
-
-  
-
-
-
-
+    
+    
 }
-
