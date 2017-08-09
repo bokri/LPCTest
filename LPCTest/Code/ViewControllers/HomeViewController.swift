@@ -118,7 +118,7 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell : PotCell!  //TODO
+        let cell = PotCell()
         
         let pot = getPot(indexPath.row)
         
