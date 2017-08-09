@@ -22,8 +22,8 @@ final class HomeViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var title : String! //TODO
-        self.navigationController?.navigationBar.topItem?.title = title
+        // Set View controller title
+        self.title = L10n.appName.string
         
         self.attachPullToRefresh()
         
