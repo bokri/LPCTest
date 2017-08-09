@@ -6,5 +6,6 @@ target 'LPCTest' do
   use_frameworks!
 
   # Pods for LPCTest
+  pod 'SwiftGen', '~> 3.0.1'
 
 end

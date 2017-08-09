@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0873BD6E9CB770C92E70D2EF /* Pods_LPCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EAD937B5A11985C869B5955 /* Pods_LPCTest.framework */; };
-		20CAE9C11F3B2532006CB70F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20CAE9C01F3B2532006CB70F /* Localizable.strings */; };
+		20CAE9C51F3B2EB3006CB70F /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAE9C41F3B2EB3006CB70F /* Storyboards.swift */; };
+		20CAE9C61F3B2F29006CB70F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20CAE9C81F3B2F29006CB70F /* Localizable.strings */; };
+		20CAE9CD1F3B3000006CB70F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAE9CC1F3B3000006CB70F /* Strings.swift */; };
+		20CAE9D11F3B30F1006CB70F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAE9D01F3B30F1006CB70F /* Colors.swift */; };
+		20CAE9D41F3B3123006CB70F /* colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 20CAE9D31F3B3123006CB70F /* colors.txt */; };
 		B0AB62631F38688A00CBFBF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB62621F38688A00CBFBF6 /* AppDelegate.swift */; };
 		B0AB62651F38688A00CBFBF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB62641F38688A00CBFBF6 /* ViewController.swift */; };
 		B0AB62681F38688A00CBFBF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0AB62661F38688A00CBFBF6 /* Main.storyboard */; };
@@ -21,7 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		20CAE9C01F3B2532006CB70F /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		20CAE9C41F3B2EB3006CB70F /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		20CAE9CA1F3B2F5B006CB70F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		20CAE9CB1F3B2F9D006CB70F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		20CAE9CC1F3B3000006CB70F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		20CAE9D01F3B30F1006CB70F /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		20CAE9D31F3B3123006CB70F /* colors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = colors.txt; sourceTree = "<group>"; };
 		4EAD937B5A11985C869B5955 /* Pods_LPCTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LPCTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DFE0DEFA8056DF7FD2E2D53 /* Pods-LPCTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPCTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LPCTest/Pods-LPCTest.debug.xcconfig"; sourceTree = "<group>"; };
 		B0AB625F1F38688A00CBFBF6 /* LPCTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPCTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +84,7 @@
 		20CAE9B71F3B2233006CB70F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				20CAE9D21F3B30FF006CB70F /* Colors */,
 				20CAE9B81F3B2263006CB70F /* Localization */,
 			);
 			path = Resources;
@@ -83,7 +93,7 @@
 		20CAE9B81F3B2263006CB70F /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				20CAE9C01F3B2532006CB70F /* Localizable.strings */,
+				20CAE9C81F3B2F29006CB70F /* Localizable.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -91,6 +101,7 @@
 		20CAE9B91F3B2285006CB70F /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				20CAE9C31F3B2E8E006CB70F /* SwiftGen */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -142,6 +153,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		20CAE9C31F3B2E8E006CB70F /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				20CAE9C41F3B2EB3006CB70F /* Storyboards.swift */,
+				20CAE9CC1F3B3000006CB70F /* Strings.swift */,
+				20CAE9D01F3B30F1006CB70F /* Colors.swift */,
+			);
+			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		20CAE9D21F3B30FF006CB70F /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				20CAE9D31F3B3123006CB70F /* colors.txt */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
 		A055711EDBC74A37049302D8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +220,7 @@
 			buildConfigurationList = B0AB62711F38688A00CBFBF6 /* Build configuration list for PBXNativeTarget "LPCTest" */;
 			buildPhases = (
 				B17B08A335E1B22FBA864244 /* [CP] Check Pods Manifest.lock */,
+				20CAE9C21F3B2E29006CB70F /* ShellScript */,
 				B0AB625B1F38688A00CBFBF6 /* Sources */,
 				B0AB625C1F38688A00CBFBF6 /* Frameworks */,
 				B0AB625D1F38688A00CBFBF6 /* Resources */,
@@ -228,6 +258,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
+				fr,
+				en,
 			);
 			mainGroup = B0AB62561F38688A00CBFBF6;
 			productRefGroup = B0AB62601F38688A00CBFBF6 /* Products */;
@@ -244,8 +276,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20CAE9D41F3B3123006CB70F /* colors.txt in Resources */,
 				B0AB626D1F38688A00CBFBF6 /* LaunchScreen.storyboard in Resources */,
-				20CAE9C11F3B2532006CB70F /* Localizable.strings in Resources */,
+				20CAE9C61F3B2F29006CB70F /* Localizable.strings in Resources */,
 				B0AB626A1F38688A00CBFBF6 /* Assets.xcassets in Resources */,
 				B0AB62681F38688A00CBFBF6 /* Main.storyboard in Resources */,
 			);
@@ -254,6 +287,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		20CAE9C21F3B2E29006CB70F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n\nif which $PODS_ROOT/SwiftGen/bin/swiftgen >/dev/null; then\nSRCDIR=\"$PROJECT_DIR/$TARGET_NAME\"\n$PODS_ROOT/SwiftGen/bin/swiftgen storyboards \"$SRCDIR\" --output \"$SRCDIR/Code/Constants/SwiftGen/Storyboards.swift\" -t swift3\n$PODS_ROOT/SwiftGen/bin/swiftgen strings \"$SRCDIR/Resources/Localization/en.lproj/Localizable.strings\" --output \"$SRCDIR/Code/Constants/SwiftGen/Strings.swift\" -t swift3\n$PODS_ROOT/SwiftGen/bin/swiftgen colors \"$SRCDIR/Resources/Colors/colors.txt\" --output \"$SRCDIR/Code/Constants/SwiftGen/Colors.swift\" -t swift3\nelse\necho \"warning: SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\nfi\n";
+		};
 		989D9813B0C95743075C1CFC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -307,17 +353,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0AB62791F386DB200CBFBF6 /* Pot.swift in Sources */,
+				20CAE9D11F3B30F1006CB70F /* Colors.swift in Sources */,
 				B0AB62651F38688A00CBFBF6 /* ViewController.swift in Sources */,
+				20CAE9CD1F3B3000006CB70F /* Strings.swift in Sources */,
 				B0AB62811F389B5600CBFBF6 /* ImageLoader.swift in Sources */,
 				B0AB62631F38688A00CBFBF6 /* AppDelegate.swift in Sources */,
 				B0AB627E1F3873E500CBFBF6 /* PotCell.swift in Sources */,
 				B0AB62831F38B02200CBFBF6 /* ApiClient.swift in Sources */,
+				20CAE9C51F3B2EB3006CB70F /* Storyboards.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		20CAE9C81F3B2F29006CB70F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20CAE9CA1F3B2F5B006CB70F /* fr */,
+				20CAE9CB1F3B2F9D006CB70F /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		B0AB62661F38688A00CBFBF6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -341,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -391,6 +450,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
