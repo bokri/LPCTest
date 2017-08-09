@@ -11,10 +11,12 @@ import UIKit
 final class HomeViewController: ViewController {
     
     // MARK : - Properties
+    
     @IBOutlet var tableView: UITableView!
     
     
     // MARK - Constants and variables
+    
     static private let cellIdentifier = "PotCell"
     let refreshControl = UIRefreshControl()
     var pots = [Pot]()
@@ -38,6 +40,9 @@ final class HomeViewController: ViewController {
         fetchPots()
     }
     
+    
+    // MARK : - Methods
+    
     func attachPullToRefresh() {
         refreshControl.addTarget(self, action: #selector(HomeViewController.pullToRefresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
@@ -45,7 +50,12 @@ final class HomeViewController: ViewController {
     
     func pullToRefresh() {
         
-        fetchPots()
+        ApiClient.shared.pots(success: { (pots) in
+            //TODO
+        }) {
+            //TODO
+        }
+
         refreshControl.endRefreshing()
         
     }
@@ -64,18 +74,9 @@ final class HomeViewController: ViewController {
     func getPot(_ row : Int) -> Pot{
         return pots[row]
     }
+
     
-    func handleRefresh(refreshControl: UIRefreshControl) {
-        
-        ApiClient.shared.pots(success: { (pots) in
-            //TODO
-        }) {
-            //TODO
-        }
-        
-        
-    }
-    
+    // MARK : - Actions
     
     @IBAction func addPot(_ sender: UIBarButtonItem) {
         
@@ -102,8 +103,6 @@ final class HomeViewController: ViewController {
 
 extension HomeViewController: UITableViewDelegate {
 
-
-    
 
 }
 
