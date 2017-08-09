@@ -1,1 +1,3 @@
+White : #FFFFFF
+Black : #000000
 Purple : #3F51B5

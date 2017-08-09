@@ -7,7 +7,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-     return true
+    
+    // Set navigation bar color
+    
+    let navigationBarAppearace = UINavigationBar.appearance()
+    navigationBarAppearace.isTranslucent = true
+    navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName: ColorName.black.color]
+    navigationBarAppearace.barTintColor = ColorName.purple.color
+
+    return true
   }
 
   func applicationWillResignActive(_ application: UIApplication) {

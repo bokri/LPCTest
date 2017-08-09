@@ -22,13 +22,21 @@ extension Color {
 // swiftlint:disable file_length
 // swiftlint:disable type_body_length
 enum ColorName {
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#000000"></span>
+  /// Alpha: 100% <br/> (0x000000ff)
+  case black
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#3f51b5"></span>
   /// Alpha: 100% <br/> (0x3f51b5ff)
   case purple
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ffffff"></span>
+  /// Alpha: 100% <br/> (0xffffffff)
+  case white
 
   var rgbaValue: UInt32 {
     switch self {
+    case .black: return 0x000000ff
     case .purple: return 0x3f51b5ff
+    case .white: return 0xffffffff
     }
   }
 
