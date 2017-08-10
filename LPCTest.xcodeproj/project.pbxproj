@@ -20,6 +20,7 @@
 		20CAE9DE1F3C552C006CB70F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAE9DD1F3C552C006CB70F /* Constants.swift */; };
 		20CAE9E01F3C611C006CB70F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAE9DF1F3C611C006CB70F /* Router.swift */; };
 		20CAE9E21F3C6687006CB70F /* Alamofire+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAE9E11F3C6687006CB70F /* Alamofire+Rx.swift */; };
+		20F3DD561F3C9CC20055155C /* UIKit+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3DD551F3C9CC20055155C /* UIKit+Gradient.swift */; };
 		B0AB62631F38688A00CBFBF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB62621F38688A00CBFBF6 /* AppDelegate.swift */; };
 		B0AB62651F38688A00CBFBF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB62641F38688A00CBFBF6 /* ViewController.swift */; };
 		B0AB62681F38688A00CBFBF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0AB62661F38688A00CBFBF6 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		20CAE9DD1F3C552C006CB70F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		20CAE9DF1F3C611C006CB70F /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		20CAE9E11F3C6687006CB70F /* Alamofire+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire+Rx.swift"; sourceTree = "<group>"; };
+		20F3DD551F3C9CC20055155C /* UIKit+Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Gradient.swift"; sourceTree = "<group>"; };
 		4EAD937B5A11985C869B5955 /* Pods_LPCTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LPCTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DFE0DEFA8056DF7FD2E2D53 /* Pods-LPCTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPCTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LPCTest/Pods-LPCTest.debug.xcconfig"; sourceTree = "<group>"; };
 		B0AB625F1F38688A00CBFBF6 /* LPCTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPCTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				20CAE9E11F3C6687006CB70F /* Alamofire+Rx.swift */,
+				20F3DD551F3C9CC20055155C /* UIKit+Gradient.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				20CAE9E21F3C6687006CB70F /* Alamofire+Rx.swift in Sources */,
 				B0AB62791F386DB200CBFBF6 /* Pot.swift in Sources */,
 				20CAE9D11F3B30F1006CB70F /* Colors.swift in Sources */,
+				20F3DD561F3C9CC20055155C /* UIKit+Gradient.swift in Sources */,
 				B0AB62651F38688A00CBFBF6 /* ViewController.swift in Sources */,
 				20CAE9DC1F3B507A006CB70F /* Images.swift in Sources */,
 				20CAE9D91F3B41D3006CB70F /* PotCell.swift in Sources */,
