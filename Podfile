@@ -9,5 +9,6 @@ target 'LPCTest' do
   pod 'SwiftGen', '~> 3.0.1'
   pod 'Reusable', '~> 4.0.0'
   pod 'Kingfisher', '~> 3.10.3'
+  pod 'Alamofire', '~> 4.5.0'
 
 end
