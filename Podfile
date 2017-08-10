@@ -11,5 +11,6 @@ target 'LPCTest' do
   pod 'Kingfisher', '~> 3.10.3'
   pod 'Alamofire', '~> 4.5.0'
   pod 'SwiftyJSON', '~> 3.1.4'
+  pod 'RxSwift', '~> 3.6.1'
 
 end

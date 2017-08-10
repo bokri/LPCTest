@@ -6,6 +6,7 @@ PODS:
     - Reusable/View (= 4.0.0)
   - Reusable/Storyboard (4.0.0)
   - Reusable/View (4.0.0)
+  - RxSwift (3.6.1)
   - SwiftGen (3.0.1)
   - SwiftyJSON (3.1.4)
 
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.5.0)
   - Kingfisher (~> 3.10.3)
   - Reusable (~> 4.0.0)
+  - RxSwift (~> 3.6.1)
   - SwiftGen (~> 3.0.1)
   - SwiftyJSON (~> 3.1.4)
 
@@ -20,9 +22,10 @@ SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   Kingfisher: a0ac82dc5bcf0388dd74b294cf2cc13730c63436
   Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
+  RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
   SwiftGen: 5f69367fae99c11d52d1ab9d45dcf10a3e59b8ef
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 0eaa2bcdae0b4f7e3009a00876de09b2ca8ab85a
+PODFILE CHECKSUM: 134dd4c4662b73ce239673723b5d0a12af643be2
 
 COCOAPODS: 1.2.1
