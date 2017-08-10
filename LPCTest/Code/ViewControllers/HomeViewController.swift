@@ -5,7 +5,6 @@
 //  Created by Aymen Bokri on 09/08/2017.
 //  Copyright © 2017 Saif Chaouachi. All rights reserved.
 //
-
 import UIKit
 
 final class HomeViewController: ViewController {
@@ -50,12 +49,8 @@ final class HomeViewController: ViewController {
     
     func pullToRefresh() {
         
-        ApiClient.shared.pots(success: { (pots) in
-            //TODO
-        }) {
-            //TODO
-        }
-
+        fetchPots()
+        
         refreshControl.endRefreshing()
         
     }
@@ -63,53 +58,51 @@ final class HomeViewController: ViewController {
     
     func fetchPots(){
         
-        ApiClient.shared.pots(success: { (pots) in
-            //TODO
-        }) {
-            //TODO
-        }
+      //  ApiClient.shared.pots(success: { (pots) in
+      //      //TODO
+      //  }) {
+      //      //TODO
+      //  }
         
     }
     
     func getPot(_ row : Int) -> Pot{
         return pots[row]
     }
-
+    
     
     // MARK : - Actions
     
     @IBAction func addPot(_ sender: UIBarButtonItem) {
         
-        ApiClient.shared.createPot {
-            //TODO
-        }
+      //  ApiClient.shared.createPot {
+      //      //TODO
+      //  }
     }
     
     @IBAction func removePot(_ sender: UIBarButtonItem) {
         
-        ApiClient.shared.removePot {
-            //TODO
-        }
+      //  ApiClient.shared.removePot {
+      //      //TODO
+      //  }
         
         
     }
-
-
-
-
+    
+    
+    
+    
 }
 
 // MARK : - UITableViewDelegate
-
 extension HomeViewController: UITableViewDelegate {
-
-
+    
+    
 }
 
 // MARK : - UITableViewDataSource
-
 extension HomeViewController: UITableViewDataSource {
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return pots.count
@@ -125,8 +118,6 @@ extension HomeViewController: UITableViewDataSource {
         
         return cell
     }
-
+    
 }
     
-
-

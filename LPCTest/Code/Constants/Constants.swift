@@ -16,6 +16,6 @@ final class Constants {
     
     public static let createPotSuffix = "/create-pot"
     
-    public static let deletePotSuffix = "/remove-pot"
+    public static let removePotSuffix = "/remove-pot"
     
 }
