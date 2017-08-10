@@ -17,6 +17,7 @@
 		20CAE9D91F3B41D3006CB70F /* PotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAE9D71F3B41D3006CB70F /* PotCell.swift */; };
 		20CAE9DA1F3B41D3006CB70F /* PotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20CAE9D81F3B41D3006CB70F /* PotCell.xib */; };
 		20CAE9DC1F3B507A006CB70F /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAE9DB1F3B507A006CB70F /* Images.swift */; };
+		20CAE9DE1F3C552C006CB70F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAE9DD1F3C552C006CB70F /* Constants.swift */; };
 		B0AB62631F38688A00CBFBF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB62621F38688A00CBFBF6 /* AppDelegate.swift */; };
 		B0AB62651F38688A00CBFBF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB62641F38688A00CBFBF6 /* ViewController.swift */; };
 		B0AB62681F38688A00CBFBF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0AB62661F38688A00CBFBF6 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		20CAE9D71F3B41D3006CB70F /* PotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotCell.swift; sourceTree = "<group>"; };
 		20CAE9D81F3B41D3006CB70F /* PotCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PotCell.xib; sourceTree = "<group>"; };
 		20CAE9DB1F3B507A006CB70F /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		20CAE9DD1F3C552C006CB70F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4EAD937B5A11985C869B5955 /* Pods_LPCTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LPCTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DFE0DEFA8056DF7FD2E2D53 /* Pods-LPCTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPCTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LPCTest/Pods-LPCTest.debug.xcconfig"; sourceTree = "<group>"; };
 		B0AB625F1F38688A00CBFBF6 /* LPCTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPCTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				20CAE9C31F3B2E8E006CB70F /* SwiftGen */,
+				20CAE9DD1F3C552C006CB70F /* Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				B0AB62631F38688A00CBFBF6 /* AppDelegate.swift in Sources */,
 				B0AB62831F38B02200CBFBF6 /* ApiClient.swift in Sources */,
 				20CAE9C51F3B2EB3006CB70F /* Storyboards.swift in Sources */,
+				20CAE9DE1F3C552C006CB70F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
