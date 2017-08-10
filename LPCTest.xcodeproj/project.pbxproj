@@ -26,7 +26,6 @@
 		B0AB626A1F38688A00CBFBF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0AB62691F38688A00CBFBF6 /* Assets.xcassets */; };
 		B0AB626D1F38688A00CBFBF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0AB626B1F38688A00CBFBF6 /* LaunchScreen.storyboard */; };
 		B0AB62791F386DB200CBFBF6 /* Pot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB62781F386DB200CBFBF6 /* Pot.swift */; };
-		B0AB62811F389B5600CBFBF6 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB62801F389B5600CBFBF6 /* ImageLoader.swift */; };
 		B0AB62831F38B02200CBFBF6 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB62821F38B02200CBFBF6 /* ApiClient.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +53,6 @@
 		B0AB626C1F38688A00CBFBF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0AB626E1F38688A00CBFBF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0AB62781F386DB200CBFBF6 /* Pot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pot.swift; sourceTree = "<group>"; };
-		B0AB62801F389B5600CBFBF6 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		B0AB62821F38B02200CBFBF6 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		FCEC8AB57FF998C70C126F34 /* Pods-LPCTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPCTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-LPCTest/Pods-LPCTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,7 +138,6 @@
 		20CAE9BC1F3B2306006CB70F /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				B0AB62801F389B5600CBFBF6 /* ImageLoader.swift */,
 				B0AB62821F38B02200CBFBF6 /* ApiClient.swift */,
 				20CAE9DF1F3C611C006CB70F /* Router.swift */,
 			);
@@ -378,7 +375,6 @@
 				20CAE9DC1F3B507A006CB70F /* Images.swift in Sources */,
 				20CAE9D91F3B41D3006CB70F /* PotCell.swift in Sources */,
 				20CAE9CD1F3B3000006CB70F /* Strings.swift in Sources */,
-				B0AB62811F389B5600CBFBF6 /* ImageLoader.swift in Sources */,
 				20CAE9D61F3B37DB006CB70F /* HomeViewController.swift in Sources */,
 				B0AB62631F38688A00CBFBF6 /* AppDelegate.swift in Sources */,
 				B0AB62831F38B02200CBFBF6 /* ApiClient.swift in Sources */,

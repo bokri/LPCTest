@@ -5,7 +5,10 @@
 //  Created by Aymen Bokri on 09/08/2017.
 //  Copyright © 2017 Saif Chaouachi. All rights reserved.
 //
+
 import UIKit
+import Reusable
+import RxSwift
 
 final class HomeViewController: ViewController {
     
@@ -18,7 +21,8 @@ final class HomeViewController: ViewController {
     
     static private let cellIdentifier = "PotCell"
     let refreshControl = UIRefreshControl()
-    var pots = [Pot]()
+    var datasource = [Pot]()
+    fileprivate let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +34,8 @@ final class HomeViewController: ViewController {
         
         self.attachPullToRefresh()
         
+        tableView.rowHeight = 200.0
         
-        
-        //TODO
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 211;
         
         fetchPots()
     }
@@ -56,18 +57,34 @@ final class HomeViewController: ViewController {
     }
     
     
-    func fetchPots(){
+    func fetchPots() {
         
-      //  ApiClient.shared.pots(success: { (pots) in
-      //      //TODO
-      //  }) {
-      //      //TODO
-      //  }
-        
+        ApiClient.shared.pots()
+            .subscribe(
+                onNext: { [weak self] pots in
+                    if (pots.count>0) {
+                        print("fetching data from internet")
+                        
+                        self?.datasource = pots
+                        self?.tableView.reloadData()
+                        
+                    } else {
+                        print("error fetching data from internet") // It must show to the user the warning page
+                        
+                        //  self?.errorView.isHidden = false
+                        
+                    }
+                },
+                onError: { (error) in
+                    debugPrint(error)
+            })
+            .disposed(by: disposeBag)
     }
     
+    
+    
     func getPot(_ row : Int) -> Pot{
-        return pots[row]
+        return datasource[row]
     }
     
     
@@ -75,16 +92,16 @@ final class HomeViewController: ViewController {
     
     @IBAction func addPot(_ sender: UIBarButtonItem) {
         
-      //  ApiClient.shared.createPot {
-      //      //TODO
-      //  }
+        //    ApiClient.shared.createPot {
+        //        //TODO
+        //    }
     }
     
     @IBAction func removePot(_ sender: UIBarButtonItem) {
         
-      //  ApiClient.shared.removePot {
-      //      //TODO
-      //  }
+        //   ApiClient.shared.removePot {
+        //       //TODO
+        //   }
         
         
     }
@@ -95,22 +112,24 @@ final class HomeViewController: ViewController {
 }
 
 // MARK : - UITableViewDelegate
+
 extension HomeViewController: UITableViewDelegate {
     
     
 }
 
 // MARK : - UITableViewDataSource
+
 extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return pots.count
+        return datasource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = PotCell()
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: PotCell.self)
         
         let pot = getPot(indexPath.row)
         
@@ -120,4 +139,6 @@ extension HomeViewController: UITableViewDataSource {
     }
     
 }
-    
+
+
+
