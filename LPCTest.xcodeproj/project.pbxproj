@@ -21,6 +21,8 @@
 		20CAE9DE1F3C552C006CB70F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAE9DD1F3C552C006CB70F /* Constants.swift */; };
 		20CAE9E01F3C611C006CB70F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAE9DF1F3C611C006CB70F /* Router.swift */; };
 		20CAE9E21F3C6687006CB70F /* Alamofire+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAE9E11F3C6687006CB70F /* Alamofire+Rx.swift */; };
+		20EF70AC1F3DFFD8008B5D3F /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EF70AB1F3DFFD8008B5D3F /* ErrorView.swift */; };
+		20EF70AE1F3E0011008B5D3F /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20EF70AD1F3E0011008B5D3F /* ErrorView.xib */; };
 		20F3DD561F3C9CC20055155C /* UIKit+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3DD551F3C9CC20055155C /* UIKit+Gradient.swift */; };
 		B0AB62631F38688A00CBFBF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB62621F38688A00CBFBF6 /* AppDelegate.swift */; };
 		B0AB62651F38688A00CBFBF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB62641F38688A00CBFBF6 /* ViewController.swift */; };
@@ -46,6 +48,8 @@
 		20CAE9DD1F3C552C006CB70F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		20CAE9DF1F3C611C006CB70F /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		20CAE9E11F3C6687006CB70F /* Alamofire+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire+Rx.swift"; sourceTree = "<group>"; };
+		20EF70AB1F3DFFD8008B5D3F /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		20EF70AD1F3E0011008B5D3F /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
 		20F3DD551F3C9CC20055155C /* UIKit+Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Gradient.swift"; sourceTree = "<group>"; };
 		4EAD937B5A11985C869B5955 /* Pods_LPCTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LPCTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DFE0DEFA8056DF7FD2E2D53 /* Pods-LPCTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LPCTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LPCTest/Pods-LPCTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 		20CAE9BF1F3B235F006CB70F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				20D767C81F3DFCF1008F0F18 /* ErrorView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +203,15 @@
 				20CAE9D31F3B3123006CB70F /* colors.txt */,
 			);
 			path = Colors;
+			sourceTree = "<group>";
+		};
+		20D767C81F3DFCF1008F0F18 /* ErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				20EF70AB1F3DFFD8008B5D3F /* ErrorView.swift */,
+				20EF70AD1F3E0011008B5D3F /* ErrorView.xib */,
+			);
+			path = ErrorView;
 			sourceTree = "<group>";
 		};
 		A055711EDBC74A37049302D8 /* Pods */ = {
@@ -309,6 +323,7 @@
 				B0AB626D1F38688A00CBFBF6 /* LaunchScreen.storyboard in Resources */,
 				20CAE9C61F3B2F29006CB70F /* Localizable.strings in Resources */,
 				B0AB626A1F38688A00CBFBF6 /* Assets.xcassets in Resources */,
+				20EF70AE1F3E0011008B5D3F /* ErrorView.xib in Resources */,
 				B0AB62681F38688A00CBFBF6 /* Main.storyboard in Resources */,
 				20CAE9DA1F3B41D3006CB70F /* PotCell.xib in Resources */,
 			);
@@ -397,6 +412,7 @@
 				20CAE9C51F3B2EB3006CB70F /* Storyboards.swift in Sources */,
 				20CAE9DE1F3C552C006CB70F /* Constants.swift in Sources */,
 				20CAE9E01F3C611C006CB70F /* Router.swift in Sources */,
+				20EF70AC1F3DFFD8008B5D3F /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
