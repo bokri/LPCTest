@@ -21,6 +21,7 @@ class PotViewModel {
                     self?.pots.value = pots
                 },
                 onError: { (error) in
+                    self.pots.value.removeAll()
                     debugPrint(error)
             })
     }

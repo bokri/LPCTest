@@ -14,10 +14,10 @@ final class HomeViewController: ViewController {
     
     // MARK : - Properties
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cancelNavBarButton: UIBarButtonItem!
     @IBOutlet weak var addNavBarButton: UIBarButtonItem!
-    
+    @IBOutlet weak var errorView: ErrorView!
     
     // MARK - Constants and variables
     
@@ -40,7 +40,11 @@ final class HomeViewController: ViewController {
         tableView.rowHeight = 200.0
         
         self.potViewModel.pots.asObservable().subscribe(onNext: { [weak self] (pots) in
+            print (pots.count)
             if(pots.count > 0) {
+                self?.addNavBarButton.isEnabled = true
+                self?.errorView.isHidden = true
+                
                 if(pots.count < 2) {
                     // Disable the Cancel button
                     self?.cancelNavBarButton.isEnabled = false
@@ -49,7 +53,9 @@ final class HomeViewController: ViewController {
                 }
             } else {
                 // Show error page
-            
+                self?.cancelNavBarButton.isEnabled = false
+                self?.addNavBarButton.isEnabled = false
+                self?.errorView.isHidden = false
             }
             
         }, onError: { (error) in
@@ -79,9 +85,9 @@ final class HomeViewController: ViewController {
     func fetchPots() {
         
         potViewModel.getPots().subscribe(onNext: { [weak self] (pots) in
-            if (pots.count > 0) {
-                self?.tableView.reloadData()
-            }
+            self?.tableView.reloadData()
+        }, onError: { (error) in
+            self.tableView.reloadData()
         }).disposed(by: disposeBag)
     }
     

@@ -8,43 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
-        <scene sceneID="RPT-pN-NbH">
-            <objects>
-                <tableViewController id="Tfz-qe-egS" customClass="HomeViewController" customModule="LPCTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ire-fw-dqe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="Tfz-qe-egS" id="szj-sN-hYN"/>
-                            <outlet property="delegate" destination="Tfz-qe-egS" id="86z-yd-Wul"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="qvT-fN-AGe">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="w5N-bV-shi">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="removePot:" destination="Tfz-qe-egS" id="mdF-bv-16w"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="rG3-gv-jX4">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="addPot:" destination="Tfz-qe-egS" id="DD8-Ot-Oyz"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="addNavBarButton" destination="rG3-gv-jX4" id="gEA-R5-fEA"/>
-                        <outlet property="cancelNavBarButton" destination="w5N-bV-shi" id="QHm-BE-XjW"/>
-                        <outlet property="tableView" destination="ire-fw-dqe" id="fRA-jf-4Er"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xsx-QD-Be2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1975.2" y="118.29085457271366"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="kTr-nE-W3X">
             <objects>
@@ -57,12 +20,71 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Tfz-qe-egS" kind="relationship" relationship="rootViewController" id="ue3-Sg-G97"/>
+                        <segue destination="yIb-xY-gNx" kind="relationship" relationship="rootViewController" id="bfi-pw-IBY"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QJJ-Fz-1At" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1036" y="118.29085457271366"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="NEd-kf-tw5">
+            <objects>
+                <viewController id="yIb-xY-gNx" customClass="HomeViewController" customModule="LPCTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YYQ-85-fUl"/>
+                        <viewControllerLayoutGuide type="bottom" id="FOZ-9k-pEe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ofM-sZ-qWL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzr-Zw-aGJ" customClass="ErrorView" customModule="LPCTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xho-L3-Gpf">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="yIb-xY-gNx" id="f0q-Ce-g3g"/>
+                                    <outlet property="delegate" destination="yIb-xY-gNx" id="Jgh-VJ-KOV"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FOZ-9k-pEe" firstAttribute="top" secondItem="xho-L3-Gpf" secondAttribute="bottom" id="JMd-sR-fED"/>
+                            <constraint firstItem="xho-L3-Gpf" firstAttribute="leading" secondItem="ofM-sZ-qWL" secondAttribute="leading" id="M4O-W7-P3h"/>
+                            <constraint firstAttribute="trailing" secondItem="xho-L3-Gpf" secondAttribute="trailing" id="f8c-gG-bck"/>
+                            <constraint firstItem="xho-L3-Gpf" firstAttribute="top" secondItem="YYQ-85-fUl" secondAttribute="bottom" id="n5v-Ah-lza"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vb0-EZ-aXJ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="FPS-qV-jSx">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="removePot:" destination="yIb-xY-gNx" id="vFR-Mu-181"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="y31-R8-xjv">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="addPot:" destination="yIb-xY-gNx" id="hcU-pl-oyI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addNavBarButton" destination="y31-R8-xjv" id="OJ0-fn-h08"/>
+                        <outlet property="cancelNavBarButton" destination="FPS-qV-jSx" id="iix-UP-ViV"/>
+                        <outlet property="errorView" destination="xzr-Zw-aGJ" id="wtq-pY-1At"/>
+                        <outlet property="tableView" destination="xho-L3-Gpf" id="Dbb-Mj-X1P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MAy-fL-a3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1840.8" y="114.69265367316342"/>
         </scene>
     </scenes>
 </document>
