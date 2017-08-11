@@ -44,27 +44,14 @@ class ApiClient {
     }
 
 
-    func createPot() -> Observable<Pot> {
-        
-        let pot = Pot()
-        
+    func createPot() -> Observable<Any> {
         return Alamofire.request(Router.createPot()).rx.responseData()
-            .map { _ in
-                pot.initialize(name: "Default Pot", imageUrl: "")
-                return pot
-        }
         
     }
     
-    func removePot() -> Observable<Pot> {
-        
-        let pot = Pot()
+    func removePot() -> Observable<Any> {
         
         return Alamofire.request(Router.removePot()).rx.responseData()
-            .map { _ in
-                pot.initialize(name: "Default Pot", imageUrl: "")
-                return pot
-        }
         
     }
 

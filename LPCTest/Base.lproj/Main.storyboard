@@ -36,6 +36,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addNavBarButton" destination="rG3-gv-jX4" id="gEA-R5-fEA"/>
+                        <outlet property="cancelNavBarButton" destination="w5N-bV-shi" id="QHm-BE-XjW"/>
                         <outlet property="tableView" destination="ire-fw-dqe" id="fRA-jf-4Er"/>
                     </connections>
                 </tableViewController>

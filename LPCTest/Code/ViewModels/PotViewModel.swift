@@ -25,33 +25,16 @@ class PotViewModel {
             })
     }
     
-    func createPot() -> Observable<Pot> {
+    func createPot() -> Observable<Any> {
         
         return ApiClient.shared.createPot()
-            .do(
-                onNext: { [weak self] pot in
-                    if((self?.pots.value.count)! > 0) {
-                        self?.pots.value.insert(pot, at: 1)
-                    }
-                },
-                onError: { (error) in
-                    debugPrint(error)
-            })
- 
+        
     }
     
-    func removePot() -> Observable<Pot> {
+    func removePot() -> Observable<Any> {
     
         return ApiClient.shared.removePot()
-            .do(
-                onNext: { [weak self] _ in
-                    if((self?.pots.value.count)! > 1) {
-                        self?.pots.value.remove(at: 1)
-                    }
-                },
-                onError: { (error) in
-                    debugPrint(error)
-            })
+
     }
 
 }

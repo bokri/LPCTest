@@ -15,6 +15,8 @@ final class HomeViewController: ViewController {
     // MARK : - Properties
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var cancelNavBarButton: UIBarButtonItem!
+    @IBOutlet weak var addNavBarButton: UIBarButtonItem!
     
     
     // MARK - Constants and variables
@@ -38,9 +40,18 @@ final class HomeViewController: ViewController {
         tableView.rowHeight = 200.0
         
         self.potViewModel.pots.asObservable().subscribe(onNext: { [weak self] (pots) in
-            if(pots.count < 2) {
-                // Disable the Cancel button
+            if(pots.count > 0) {
+                if(pots.count < 2) {
+                    // Disable the Cancel button
+                    self?.cancelNavBarButton.isEnabled = false
+                }else {
+                    self?.cancelNavBarButton.isEnabled = true
+                }
+            } else {
+                // Show error page
+            
             }
+            
         }, onError: { (error) in
             print(error)
         }).disposed(by: self.disposeBag)
@@ -70,9 +81,6 @@ final class HomeViewController: ViewController {
         potViewModel.getPots().subscribe(onNext: { [weak self] (pots) in
             if (pots.count > 0) {
                 self?.tableView.reloadData()
-            } else {
-                // Show the error view to the user
-                // self?.errorView.isHidden = false
             }
         }).disposed(by: disposeBag)
     }
@@ -87,24 +95,32 @@ final class HomeViewController: ViewController {
     // MARK : - Actions
     
     @IBAction func addPot(_ sender: UIBarButtonItem) {
-        
-        potViewModel.createPot().subscribe(onNext: { [weak self] (pot) in
-            if (self?.potViewModel.pots.value.count)! > 0 {
-                
-                self?.tableView.beginUpdates()
-                
-                self?.tableView.insertRows(at: [IndexPath(row: 1, section: 0)], with: UITableViewRowAnimation.top)
-                
-                self?.tableView.endUpdates()
-            }
+
+        potViewModel.createPot().subscribe(onCompleted: {
+            ApiClient.shared.pots().subscribe(onNext: { [weak self] pots in
+                if let pot = pots.last {
+                    self?.potViewModel.pots.value.insert(pot, at: 1)
+                    
+                    self?.tableView.beginUpdates()
+                    
+                    self?.tableView.insertRows(at: [IndexPath(row: 1, section: 0)], with: UITableViewRowAnimation.top)
+                    
+                    self?.tableView.endUpdates()
+                    
+                    
+                }
+            })
         }).disposed(by: disposeBag)
         
     }
     
     @IBAction func removePot(_ sender: UIBarButtonItem) {
         
-        potViewModel.removePot().subscribe(onNext: { [weak self] (pot) in
+        potViewModel.removePot().subscribe(onNext: { [weak self] (Any) in
+            
             if (self?.potViewModel.pots.value.count)! > 1 {
+                
+                self?.potViewModel.pots.value.remove(at: 1)
                 
                 self?.tableView.beginUpdates()
                 
