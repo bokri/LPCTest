@@ -37,8 +37,6 @@ class ApiClient {
                         pots.append(pot)
                     
                     })
-                    
-                
                 
                 return pots
         }
@@ -52,7 +50,7 @@ class ApiClient {
         
         return Alamofire.request(Router.createPot()).rx.responseData()
             .map { _ in
-                pot.initialize(name: "Default Pot", imageUrl: "http://www.cbnews.fr/var/media/mce/pot_commun_logo.jpg")
+                pot.initialize(name: "Default Pot", imageUrl: "")
                 return pot
         }
         
@@ -64,7 +62,7 @@ class ApiClient {
         
         return Alamofire.request(Router.removePot()).rx.responseData()
             .map { _ in
-                pot.initialize(name: "Default Pot", imageUrl: "http://www.cbnews.fr/var/media/mce/pot_commun_logo.jpg")
+                pot.initialize(name: "Default Pot", imageUrl: "")
                 return pot
         }
         

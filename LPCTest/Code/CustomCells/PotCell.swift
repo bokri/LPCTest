@@ -33,8 +33,7 @@ class PotCell : UITableViewCell, NibReusable {
                         
             } catch {
                 print(error.localizedDescription)
+                self.typeImageView.image = Asset.logo.image
             }
     }
-    
-
 }

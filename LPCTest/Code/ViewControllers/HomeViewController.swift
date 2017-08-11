@@ -92,16 +92,32 @@ final class HomeViewController: ViewController {
     
     @IBAction func addPot(_ sender: UIBarButtonItem) {
         
-        //    ApiClient.shared.createPot {
-        //        //TODO
-        //    }
+        ApiClient.shared.createPot()
+            .subscribe(
+                onNext: { [weak self] pot in
+                   self?.datasource.insert(pot, at: 1)
+                   self?.tableView.reloadData()
+                 
+                },
+                onError: { (error) in
+                    debugPrint(error)
+            })
+            .disposed(by: disposeBag)
     }
     
     @IBAction func removePot(_ sender: UIBarButtonItem) {
         
-        //   ApiClient.shared.removePot {
-        //       //TODO
-        //   }
+        ApiClient.shared.removePot()
+            .subscribe(
+                onNext: { [weak self] _ in
+                    self?.datasource.remove(at: 1)
+                    self?.tableView.reloadData()
+                    
+                },
+                onError: { (error) in
+                    debugPrint(error)
+            })
+            .disposed(by: disposeBag)
         
         
     }
