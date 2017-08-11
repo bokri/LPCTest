@@ -21,8 +21,9 @@ final class HomeViewController: ViewController {
     
     static private let cellIdentifier = "PotCell"
     let refreshControl = UIRefreshControl()
-    var datasource = [Pot]()
+    let potViewModel = PotViewModel()
     fileprivate let disposeBag = DisposeBag()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +37,15 @@ final class HomeViewController: ViewController {
         
         tableView.rowHeight = 200.0
         
-        
-        fetchPots()
+        self.potViewModel.pots.asObservable().subscribe(onNext: { [weak self] (pots) in
+            if(pots.count < 2) {
+                // Disable the Cancel button
+            }
+        }, onError: { (error) in
+            print(error)
+        }).disposed(by: self.disposeBag)
+    
+        self.fetchPots()
     }
     
     
@@ -59,32 +67,20 @@ final class HomeViewController: ViewController {
     
     func fetchPots() {
         
-        ApiClient.shared.pots()
-            .subscribe(
-                onNext: { [weak self] pots in
-                    if (pots.count>0) {
-                        print("fetching data from internet")
-                        
-                        self?.datasource = pots
-                        self?.tableView.reloadData()
-                        
-                    } else {
-                        print("error fetching data from internet") // It must show to the user the warning page
-                        
-                        //  self?.errorView.isHidden = false
-                        
-                    }
-                },
-                onError: { (error) in
-                    debugPrint(error)
-            })
-            .disposed(by: disposeBag)
+        potViewModel.getPots().subscribe(onNext: { [weak self] (pots) in
+            if (pots.count > 0) {
+                self?.tableView.reloadData()
+            } else {
+                // Show the error view to the user
+                // self?.errorView.isHidden = false
+            }
+        }).disposed(by: disposeBag)
     }
     
     
     
-    func getPot(_ row : Int) -> Pot{
-        return datasource[row]
+    func getPot(_ row : Int) -> Pot {
+        return potViewModel.pots.value[row]
     }
     
     
@@ -92,33 +88,31 @@ final class HomeViewController: ViewController {
     
     @IBAction func addPot(_ sender: UIBarButtonItem) {
         
-        ApiClient.shared.createPot()
-            .subscribe(
-                onNext: { [weak self] pot in
-                   self?.datasource.insert(pot, at: 1)
-                   self?.tableView.reloadData()
-                 
-                },
-                onError: { (error) in
-                    debugPrint(error)
-            })
-            .disposed(by: disposeBag)
+        potViewModel.createPot().subscribe(onNext: { [weak self] (pot) in
+            if (self?.potViewModel.pots.value.count)! > 0 {
+                
+                self?.tableView.beginUpdates()
+                
+                self?.tableView.insertRows(at: [IndexPath(row: 1, section: 0)], with: UITableViewRowAnimation.top)
+                
+                self?.tableView.endUpdates()
+            }
+        }).disposed(by: disposeBag)
+        
     }
     
     @IBAction func removePot(_ sender: UIBarButtonItem) {
         
-        ApiClient.shared.removePot()
-            .subscribe(
-                onNext: { [weak self] _ in
-                    self?.datasource.remove(at: 1)
-                    self?.tableView.reloadData()
-                    
-                },
-                onError: { (error) in
-                    debugPrint(error)
-            })
-            .disposed(by: disposeBag)
-        
+        potViewModel.removePot().subscribe(onNext: { [weak self] (pot) in
+            if (self?.potViewModel.pots.value.count)! > 1 {
+                
+                self?.tableView.beginUpdates()
+                
+                self?.tableView.deleteRows(at: [IndexPath(row: 1, section: 0)], with: UITableViewRowAnimation.bottom)
+                
+                self?.tableView.endUpdates()
+            }
+        }).disposed(by: disposeBag)
         
     }
     
@@ -140,7 +134,7 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return datasource.count
+        return potViewModel.pots.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

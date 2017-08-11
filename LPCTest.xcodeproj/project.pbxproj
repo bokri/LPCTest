@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0873BD6E9CB770C92E70D2EF /* Pods_LPCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EAD937B5A11985C869B5955 /* Pods_LPCTest.framework */; };
+		2012045C1F3DA589004E0FD0 /* PotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2012045B1F3DA589004E0FD0 /* PotViewModel.swift */; };
 		20CAE9C51F3B2EB3006CB70F /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAE9C41F3B2EB3006CB70F /* Storyboards.swift */; };
 		20CAE9C61F3B2F29006CB70F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20CAE9C81F3B2F29006CB70F /* Localizable.strings */; };
 		20CAE9CD1F3B3000006CB70F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CAE9CC1F3B3000006CB70F /* Strings.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2012045B1F3DA589004E0FD0 /* PotViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotViewModel.swift; sourceTree = "<group>"; };
 		20CAE9C41F3B2EB3006CB70F /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		20CAE9CA1F3B2F5B006CB70F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		20CAE9CB1F3B2F9D006CB70F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -79,9 +81,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2012045A1F3DA127004E0FD0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2012045B1F3DA589004E0FD0 /* PotViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		20CAE9B61F3B221E006CB70F /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				2012045A1F3DA127004E0FD0 /* ViewModels */,
 				20CAE9BF1F3B235F006CB70F /* Views */,
 				20CAE9BE1F3B2347006CB70F /* Models */,
 				20CAE9BD1F3B232E006CB70F /* Extensions */,
@@ -377,6 +388,7 @@
 				20F3DD561F3C9CC20055155C /* UIKit+Gradient.swift in Sources */,
 				B0AB62651F38688A00CBFBF6 /* ViewController.swift in Sources */,
 				20CAE9DC1F3B507A006CB70F /* Images.swift in Sources */,
+				2012045C1F3DA589004E0FD0 /* PotViewModel.swift in Sources */,
 				20CAE9D91F3B41D3006CB70F /* PotCell.swift in Sources */,
 				20CAE9CD1F3B3000006CB70F /* Strings.swift in Sources */,
 				20CAE9D61F3B37DB006CB70F /* HomeViewController.swift in Sources */,
