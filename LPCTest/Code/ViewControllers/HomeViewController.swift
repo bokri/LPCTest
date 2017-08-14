@@ -26,6 +26,7 @@ final class HomeViewController: ViewController {
     let potViewModel = PotViewModel()
     fileprivate let disposeBag = DisposeBag()
     
+    // MARK - Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +40,9 @@ final class HomeViewController: ViewController {
         
         tableView.rowHeight = 200.0
         
+        // Observe the number of pots
         self.potViewModel.pots.asObservable().subscribe(onNext: { [weak self] (pots) in
-            print (pots.count)
+            
             if(pots.count > 0) {
                 self?.addNavBarButton.isEnabled = true
                 self?.errorView.isHidden = true
@@ -49,12 +51,15 @@ final class HomeViewController: ViewController {
                     // Disable the Cancel button
                     self?.cancelNavBarButton.isEnabled = false
                 }else {
+                    // Enable the cancel button
                     self?.cancelNavBarButton.isEnabled = true
                 }
             } else {
-                // Show error page
+                // Disable the cancel button
                 self?.cancelNavBarButton.isEnabled = false
+                // Disable the add button
                 self?.addNavBarButton.isEnabled = false
+                // Show the error page
                 self?.errorView.isHidden = false
             }
             
@@ -81,7 +86,6 @@ final class HomeViewController: ViewController {
         
     }
     
-    
     func fetchPots() {
         
         potViewModel.getPots().subscribe(onNext: { [weak self] (pots) in
@@ -90,7 +94,6 @@ final class HomeViewController: ViewController {
             self.tableView.reloadData()
         }).disposed(by: disposeBag)
     }
-    
     
     
     func getPot(_ row : Int) -> Pot {
@@ -103,16 +106,20 @@ final class HomeViewController: ViewController {
     @IBAction func addPot(_ sender: UIBarButtonItem) {
 
         potViewModel.createPot().subscribe(onCompleted: {
+            // Fetch all new pots
             ApiClient.shared.pots().subscribe(onNext: { [weak self] pots in
+                // Get the last pot
                 if let pot = pots.last {
+                    // Update the pots datasource
                     self?.potViewModel.pots.value.insert(pot, at: 1)
+                    
+                    // Update the pots table view
                     
                     self?.tableView.beginUpdates()
                     
                     self?.tableView.insertRows(at: [IndexPath(row: 1, section: 0)], with: UITableViewRowAnimation.top)
                     
                     self?.tableView.endUpdates()
-                    
                     
                 }
             })
@@ -126,20 +133,22 @@ final class HomeViewController: ViewController {
             
             if (self?.potViewModel.pots.value.count)! > 1 {
                 
+                // Remove the pot from the datasource
+                
                 self?.potViewModel.pots.value.remove(at: 1)
+                
+                // Update the pots table view
                 
                 self?.tableView.beginUpdates()
                 
                 self?.tableView.deleteRows(at: [IndexPath(row: 1, section: 0)], with: UITableViewRowAnimation.bottom)
                 
                 self?.tableView.endUpdates()
+                
             }
         }).disposed(by: disposeBag)
         
     }
-    
-    
-    
     
 }
 

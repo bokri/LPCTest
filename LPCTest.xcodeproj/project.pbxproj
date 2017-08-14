@@ -101,7 +101,6 @@
 				20CAE9BE1F3B2347006CB70F /* Models */,
 				20CAE9BD1F3B232E006CB70F /* Extensions */,
 				20CAE9BC1F3B2306006CB70F /* Networking */,
-				20CAE9BB1F3B22DF006CB70F /* CustomCells */,
 				20CAE9BA1F3B22C0006CB70F /* ViewControllers */,
 				20CAE9B91F3B2285006CB70F /* Constants */,
 			);
@@ -143,15 +142,6 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		20CAE9BB1F3B22DF006CB70F /* CustomCells */ = {
-			isa = PBXGroup;
-			children = (
-				20CAE9D71F3B41D3006CB70F /* PotCell.swift */,
-				20CAE9D81F3B41D3006CB70F /* PotCell.xib */,
-			);
-			path = CustomCells;
-			sourceTree = "<group>";
-		};
 		20CAE9BC1F3B2306006CB70F /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +171,7 @@
 		20CAE9BF1F3B235F006CB70F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				20E659CC1F4221760093BA0C /* PotCell */,
 				20D767C81F3DFCF1008F0F18 /* ErrorView */,
 			);
 			path = Views;
@@ -212,6 +203,15 @@
 				20EF70AD1F3E0011008B5D3F /* ErrorView.xib */,
 			);
 			path = ErrorView;
+			sourceTree = "<group>";
+		};
+		20E659CC1F4221760093BA0C /* PotCell */ = {
+			isa = PBXGroup;
+			children = (
+				20CAE9D71F3B41D3006CB70F /* PotCell.swift */,
+				20CAE9D81F3B41D3006CB70F /* PotCell.xib */,
+			);
+			path = PotCell;
 			sourceTree = "<group>";
 		};
 		A055711EDBC74A37049302D8 /* Pods */ = {

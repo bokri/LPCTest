@@ -17,10 +17,14 @@ class PotCell : UITableViewCell, NibReusable {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var typeImageView: UIImageView!
     
+    // MARK: - Overrides
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         typeImageView.applyGradient()
     }
+    
+    // MARK: - Methods
     
     func configureCellFor(pot: Pot){
         

@@ -12,11 +12,13 @@ import SwiftyJSON
 import RxSwift
 
 class ApiClient {
-
-  static let shared = ApiClient()
     
+    // For singelton design pattern purpose
+    static let shared = ApiClient()
     
-  func pots() -> Observable<[Pot]> {
+    // MARK : - Methods
+    
+    func pots() -> Observable<[Pot]> {
         
         var pots = [Pot]()
     

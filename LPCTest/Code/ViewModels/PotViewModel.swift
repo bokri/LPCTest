@@ -11,8 +11,10 @@ import RxSwift
 
 class PotViewModel {
 
+    // MARK : - Variables
     var pots = Variable<[Pot]>([])
   
+    // MARK : - Methods
     func getPots() -> Observable<[Pot]> {
     
         return ApiClient.shared.pots()

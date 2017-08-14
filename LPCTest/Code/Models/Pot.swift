@@ -2,8 +2,8 @@ import Foundation
 
 class Pot {
 
-  var  name : String = ""
-  var  imageUrl : String = ""
+    var  name : String = ""
+    var  imageUrl : String = ""
 
     func initialize(name: String, imageUrl: String = "") {
     

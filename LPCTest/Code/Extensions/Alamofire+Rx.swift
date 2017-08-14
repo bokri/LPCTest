@@ -13,6 +13,7 @@ extension Request: ReactiveCompatible {}
 
 extension Reactive where Base: DataRequest {
     
+    // Alamofire Rx extension for JSON Response
     func responseJSON() -> Observable<Any> {
         return Observable.create { observer in
             let request = self.base.responseJSON { response in
@@ -30,6 +31,7 @@ extension Reactive where Base: DataRequest {
         }
     }
     
+    // Alamofire Rx extension for Data Response
     func responseData() -> Observable<Any> {
         return Observable.create { observer in
             let request = self.base.responseData { response in

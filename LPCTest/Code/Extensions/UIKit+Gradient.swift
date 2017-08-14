@@ -10,8 +10,8 @@ import UIKit
 
 extension UIView {
     
+    // UIView extension to apply gradient
     func applyGradient() {
-        
         let gradient:CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
         gradient.colors = [UIColor.white.withAlphaComponent(0.2).cgColor, UIColor.black.withAlphaComponent(0.9).cgColor]
